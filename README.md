@@ -1,70 +1,81 @@
-# Getting Started with Create React App
+# 📝 memorial
+使用 [Create React App](https://github.com/facebook/create-react-app)
+建構的專案。
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+本專案的目的是為了感謝幫我求婚的大大們，和紀錄自己和女友(未來的老婆)的點點滴滴XD
+故命名為 **memorial**
 
-## Available Scripts
+## 🤔 為何要特地大費周章做一個網站?
+誒...身為一位前端**工程師**，用 `css`、`Javascript`、`html`，來製作美觀的感謝函，比用手做美美的卡片簡單多了XD ~~我小時候美術就很爛~~
 
-In the project directory, you can run:
+> 那你可以 po **Instagram** or **Facebook** 或用時下最流行的 **ClubHouse** 說給他們聽阿!
 
-### `yarn start`
+我就想自己做嘛！心意心意心意 ~~作品集~~
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+---
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+# Table of contents
+<!--ts-->
+* [如何啟動專案](#如何啟動專案)
+* [Third Party](#third-party)
+<!--td-->
 
-### `yarn test`
+    
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🚀 如何啟動專案
 
-### `yarn build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 1️⃣ install `nodeJS`
+下載 `nodeJS` 👉 [點我到官網](https://nodejs.org/en/)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 2️⃣ `npm install`
+```shell
+npm install
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 3️⃣ `npm start`
+```shell
+npm start
+```
 
-### `yarn eject`
+### 💡 build production code
+```shell
+npm run build
+```
+---
+## Third Party
+### main
+* [create-react-app](https://facebook.github.io/create-react-app/docs/getting-started)
+   * [react & react-dom](https://reactjs.org/)
+   * [react-testing-library](https://testing-library.com/docs/react-testing-library/intro/)
+   * [eslint](https://eslint.org/)
+     * [eslint-config-react-app](https://www.npmjs.com/package/eslint-config-react-app)
+* [react-router-dom](https://reactrouter.com/web/guides/quick-start) 
+* [typescript](https://www.typescriptlang.org/)
+* [emotion](https://emotion.sh/docs/introduction)
+* [immer](https://immerjs.github.io/immer/docs/introduction)
+* [chakra-ui](https://chakra-ui.com/docs/getting-started)
+  * [framer-motion](https://www.framer.com/motion/)
+### 開發小工具
+* [prettier](https://prettier.io/)
+* [react-app-rewrite](https://www.npmjs.com/package/react-app-rewired)
+* [customize-cra](https://www.npmjs.com/package/customize-cra)
+* [husky](https://typicode.github.io/husky/#/)
+* [lint-staged](https://github.com/okonet/lint-staged)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 專案結構
+```
+├── README.md
+├── .gitignore
+├── .prettierrc.js
+├── .vscode
+├── config-overrides.js
+├── src
+├── public
+├── package.json
+├── package-lock.json
+├── tsconfig.json
+└── tsconfig.path.json
+```
