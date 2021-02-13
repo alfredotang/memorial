@@ -1,5 +1,6 @@
 import { FC } from 'react';
 import { useHistory } from 'react-router-dom';
+import styled from '@emotion/styled';
 import { Avatar } from '@chakra-ui/react';
 import { motion, Variants } from 'framer-motion';
 import { PeopleListEntity } from '@src/data/people';
@@ -12,11 +13,36 @@ const cardVariants: Variants = {
   },
 };
 
-type Props = Omit<PeopleListEntity, 'name'> & {
-  redirectTo?: string;
+type WrapperProps = {
+  isActive: boolean;
+  enableActiveMode: boolean;
 };
 
-const Card: FC<Props> = ({ src, alt, redirectTo }) => {
+const Wrapper = styled(motion.div)<WrapperProps>`
+  ${({ isActive, enableActiveMode }) =>
+    enableActiveMode && !isActive && `filter: blur(2px);`}
+  &:hover {
+    filter: none;
+  }
+`;
+
+type Props = Omit<PeopleListEntity, 'name'> & {
+  isActive?: boolean;
+  redirectTo?: string;
+  duration?: number;
+  delay?: number;
+  enableActiveMode?: boolean;
+};
+
+const Card: FC<Props> = ({
+  src,
+  alt,
+  redirectTo,
+  duration = 0,
+  delay = 0,
+  isActive = true,
+  enableActiveMode = false,
+}) => {
   const history = useHistory();
   const handleRedirectToPeople = () => {
     if (redirectTo) {
@@ -25,11 +51,13 @@ const Card: FC<Props> = ({ src, alt, redirectTo }) => {
   };
 
   return (
-    <motion.div
+    <Wrapper
       initial="hidden"
       animate="visible"
       variants={cardVariants}
-      transition={{ duration: 1, delay: 1 }}
+      transition={{ duration, delay }}
+      isActive={isActive}
+      enableActiveMode={enableActiveMode}
     >
       <motion.div
         whileHover={{ scale: 1.5 }}
@@ -38,7 +66,7 @@ const Card: FC<Props> = ({ src, alt, redirectTo }) => {
       >
         <Avatar src={src} name={alt} size="2xl" cursor="pointer" />
       </motion.div>
-    </motion.div>
+    </Wrapper>
   );
 };
 
