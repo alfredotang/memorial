@@ -4,7 +4,7 @@ import Header from './Header';
 
 const Layout: FC = ({ children }) => {
   return (
-    <div style={{ height: '200vh' }}>
+    <div>
       <Header />
       <main>{children}</main>
     </div>
