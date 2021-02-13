@@ -7,7 +7,7 @@ import { routes } from './router';
 const App: FC = () => {
   return (
     <ThemeProvider>
-      <Router>
+      <Router basename="memorial">
         <Switch>
           <Layout>
             <Suspense fallback="">
