@@ -1,5 +1,10 @@
 import { FC, Suspense } from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from 'react-router-dom';
 import { ThemeProvider } from '@src/theme';
 import { Layout } from '@src/components';
 import { routes } from './router';
@@ -19,6 +24,9 @@ const App: FC = () => {
                   path={route.path}
                 />
               ))}
+              <Route>
+                <Redirect to="/" />
+              </Route>
             </Suspense>
           </Layout>
         </Switch>
