@@ -1,5 +1,7 @@
 import { lazy, LazyExoticComponent, FunctionComponent } from 'react';
 
+const Home = lazy(() => import('@src/pages'));
+
 interface Routes {
   component: LazyExoticComponent<FunctionComponent>;
   path: string;
@@ -7,7 +9,14 @@ interface Routes {
   name: string;
 }
 
-const routes: Routes[] = [];
+const routes: Routes[] = [
+  {
+    component: Home,
+    path: '/',
+    exact: true,
+    name: 'home',
+  },
+];
 
 export { routes };
 export type { Routes };
