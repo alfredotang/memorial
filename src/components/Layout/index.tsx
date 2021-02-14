@@ -1,12 +1,12 @@
 import { FC } from 'react';
-import styled from '@emotion/styled';
+import { Box } from '@chakra-ui/react';
 import Header from './Header';
 
 const Layout: FC = ({ children }) => {
   return (
     <div>
       <Header />
-      <main>{children}</main>
+      <Box p={[5, 5, 10]}>{children}</Box>
     </div>
   );
 };

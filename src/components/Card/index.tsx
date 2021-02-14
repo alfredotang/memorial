@@ -1,9 +1,10 @@
 import { FC } from 'react';
 import { useHistory } from 'react-router-dom';
 import styled from '@emotion/styled';
-import { Avatar } from '@chakra-ui/react';
+import { Avatar, ThemeTypings } from '@chakra-ui/react';
 import { motion, Variants } from 'framer-motion';
 import { PeopleListEntity } from '@src/data/people';
+import { useRWD } from '@src/hooks';
 
 const cardVariants: Variants = {
   hidden: { opacity: 1, scale: 0 },
@@ -17,6 +18,8 @@ type WrapperProps = {
   isActive: boolean;
   enableActiveMode: boolean;
 };
+
+type AvatarSizeVariants = ThemeTypings['components']['Avatar']['sizes'];
 
 const Wrapper = styled(motion.div)<WrapperProps>`
   ${({ isActive, enableActiveMode }) =>
@@ -50,6 +53,8 @@ const Card: FC<Props> = ({
     }
   };
 
+  const avatarSize = useRWD<AvatarSizeVariants>(['md', 'lg', '2xl']);
+
   return (
     <Wrapper
       initial="hidden"
@@ -64,7 +69,7 @@ const Card: FC<Props> = ({
         whileTap={{ scale: 1.2 }}
         onClick={handleRedirectToPeople}
       >
-        <Avatar src={src} name={alt} size="2xl" cursor="pointer" />
+        <Avatar src={src} name={alt} size={avatarSize} cursor="pointer" />
       </motion.div>
     </Wrapper>
   );

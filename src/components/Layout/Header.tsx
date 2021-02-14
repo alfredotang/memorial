@@ -1,10 +1,12 @@
 import { FC } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useLocation } from 'react-router-dom';
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
-import { Heading, Box, Button } from '@chakra-ui/react';
+import { Heading, Box, Button, ThemeTypings } from '@chakra-ui/react';
 import { theme } from '@src/theme';
-import { useMeasureScroll } from '@src/hooks';
+import { useMeasureScroll, useRWD } from '@src/hooks';
+
+type HeadingSizeVariants = ThemeTypings['components']['Heading']['sizes'];
 
 const HeaderBaseStyled = css`
   width: 100%;
@@ -30,8 +32,11 @@ const HeaderContent = styled.div<{ showShadow: boolean }>`
 
 const Header: FC = () => {
   const history = useHistory();
+  const { pathname } = useLocation();
   const { scrollY } = useMeasureScroll({ switchOn: true });
   const SHOW_HEADER_SHADOW = scrollY > 40;
+
+  const headingSize = useRWD<HeadingSizeVariants>(['sm', 'lg', 'xl']);
 
   const handleRedirectToHome = () => {
     history.replace('/');
@@ -40,14 +45,22 @@ const Header: FC = () => {
   return (
     <Wrapper>
       <HeaderContent showShadow={SHOW_HEADER_SHADOW}>
-        <Box display="flex" px={[10, 10, 20]}>
-          <Heading>Memorial</Heading>
+        <Box display="flex" px={[5, 10, 20]}>
+          <Heading
+            cursor="pointer"
+            onClick={handleRedirectToHome}
+            size={headingSize}
+          >
+            Memorial
+          </Heading>
         </Box>
-        <Box display="flex" mr={[10, 20, 20]}>
-          <Button variant="link" onClick={handleRedirectToHome}>
-            Back To Home
-          </Button>
-        </Box>
+        {pathname !== '/' && (
+          <Box display="flex" mr={[5, 10, 20]}>
+            <Button variant="link" onClick={handleRedirectToHome}>
+              Back To Home
+            </Button>
+          </Box>
+        )}
       </HeaderContent>
     </Wrapper>
   );
