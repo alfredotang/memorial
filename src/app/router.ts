@@ -1,7 +1,8 @@
 import { lazy, LazyExoticComponent, FunctionComponent } from 'react';
 
 const Home = lazy(() => import('@src/pages'));
-const People = lazy(() => import('@src/pages/People'));
+const ProposeDay = lazy(() => import('@src/pages/ProposeDay'));
+const ThanksList = lazy(() => import('@src/pages/ProposeDay/ThanksList'));
 
 interface Routes {
   component: LazyExoticComponent<FunctionComponent>;
@@ -19,10 +20,17 @@ const routes: Routes[] = [
   },
 
   {
-    component: People,
-    path: '/people/:name',
+    component: ProposeDay,
+    path: '/proposeDay',
+    exact: true,
+    name: 'proposeDay',
+  },
+
+  {
+    component: ThanksList,
+    path: '/proposeDay/thanksList/:name',
     exact: false,
-    name: 'people',
+    name: 'proposeDay-thanksList',
   },
 ];
 

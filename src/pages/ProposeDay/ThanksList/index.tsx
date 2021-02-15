@@ -9,7 +9,7 @@ function findPeople(name: string) {
   return peopleListData.find((item) => item.name === name);
 }
 
-const People: FC = () => {
+const ThanksList: FC = () => {
   const { name } = useParams<{ name: string }>();
   const people = findPeople(name);
   const { ref, bounds } = useMeasure();
@@ -25,4 +25,4 @@ const People: FC = () => {
   );
 };
 
-export default People;
+export default ThanksList;

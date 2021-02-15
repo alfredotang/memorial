@@ -29,7 +29,7 @@ const CardList: FC<Props> = ({
             key={item.alt}
             src={item.src}
             alt={item.alt}
-            redirectTo={`/people/${item.name}/`}
+            redirectTo={`/proposeDay/thanksList/${item.name}/`}
             isActive={activeItem ? item.name === activeItem : true}
             enableActiveMode={enableActiveMode}
             duration={duration}

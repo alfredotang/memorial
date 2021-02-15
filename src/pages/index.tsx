@@ -1,11 +1,11 @@
 import { FC, Fragment } from 'react';
-import { Banner, CardList } from '@src/components';
+import { Redirect } from 'react-router-dom';
 
 const Home: FC = () => {
   return (
     <Fragment>
-      <Banner />
-      <CardList delay={1} duration={1} />
+      <Redirect to="/proposeDay" />
+      <div>Home</div>
     </Fragment>
   );
 };
