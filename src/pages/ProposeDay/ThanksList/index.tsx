@@ -16,7 +16,12 @@ const ThanksList: FC = () => {
 
   return (
     <Box>
-      <Box mb={[5, 5, 10]} height={`${bounds.height}px`}>
+      <Box
+        mb={[5, 5, 10]}
+        height={`${bounds.height}px`}
+        display="flex"
+        justifyContent="center"
+      >
         <Box position="fixed" ref={ref}>
           <CardList duration={1} activeItem={name} enableActiveMode />
         </Box>
