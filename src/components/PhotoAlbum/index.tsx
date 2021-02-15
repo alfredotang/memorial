@@ -46,7 +46,7 @@ type Props = {
   mdSrc: string;
 };
 
-const Banner: FC<Props> = ({ imgSrc, imgAlt, mdSrc }) => {
+const PhotoAlbum: FC<Props> = ({ imgSrc, imgAlt, mdSrc }) => {
   return (
     <Wrapper
       initial="hidden"
@@ -74,4 +74,4 @@ const Banner: FC<Props> = ({ imgSrc, imgAlt, mdSrc }) => {
   );
 };
 
-export default Banner;
+export default PhotoAlbum;

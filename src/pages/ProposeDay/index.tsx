@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { SimpleGrid, Box, PositionProps } from '@chakra-ui/react';
-import { Banner, PeopleList, PeopleItem } from '@src/components';
+import { PhotoAlbum, PeopleList, PeopleItem } from '@src/components';
 import BannerImg from '@src/assets/images/banner/proposeDay.jpg';
 import ProposeDayMd from './proposeDay.md';
 import { useMeasure, useRWD } from '@src/hooks';
@@ -29,7 +29,7 @@ const ProposeDay: FC = () => {
       flexDirection="column"
       spacing={[5, 5, 10]}
     >
-      <Banner imgSrc={BannerImg} imgAlt="proposeDay" mdSrc={ProposeDayMd} />
+      <PhotoAlbum imgSrc={BannerImg} imgAlt="proposeDay" mdSrc={ProposeDayMd} />
       <Box height={`${bounds.height}px`} display="flex" justifyContent="center">
         <Box position="fixed" ref={ref} bottom={bottom}>
           <PeopleList delay={1} duration={1} data={data} />
