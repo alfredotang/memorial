@@ -10,7 +10,7 @@
 
 > 那你可以 po **Instagram** or **Facebook** 或用時下最流行的 **ClubHouse** 說給他們聽阿!
 
-我就想自己做嘛！心意心意心意 ~~作品集~~
+我就想自己做嘛！心意心意心意 ~~作品集~~
 
 ---
 
@@ -57,6 +57,7 @@ npm run build
 * [immer](https://immerjs.github.io/immer/docs/introduction)
 * [chakra-ui](https://chakra-ui.com/docs/getting-started)
   * [framer-motion](https://www.framer.com/motion/)
+* [lodash](https://lodash.com/)
 ### 開發小工具
 * [prettier](https://prettier.io/)
 * [react-app-rewrite](https://www.npmjs.com/package/react-app-rewired)
