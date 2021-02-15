@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import Card from '../Card';
+import { Card } from '@src/components';
 import { SimpleGrid, Box } from '@chakra-ui/react';
 import { peopleListData } from '@src/data/people';
 
