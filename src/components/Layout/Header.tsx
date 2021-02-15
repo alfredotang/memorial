@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { useHistory, useLocation, NavLink } from 'react-router-dom';
+import { useHistory, useLocation } from 'react-router-dom';
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 import { Heading, Box, Button, ThemeTypings } from '@chakra-ui/react';
@@ -43,7 +43,12 @@ const Header: FC = () => {
   };
 
   const handleHistoryBack = () => {
-    history.goBack();
+    const pathMatch = pathname.split('/');
+    if (pathMatch.length > 2) {
+      history.replace(`/${pathMatch[1]}`);
+    } else {
+      handleRedirectToHome();
+    }
   };
 
   return (
