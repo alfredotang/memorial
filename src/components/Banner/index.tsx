@@ -48,12 +48,17 @@ const Banner: FC = () => {
       variants={wrapperVariants}
       transition={{ duration: 2 }}
     >
-      <Box display="flex" flexBasis={['100%', '100%', '50%']}>
+      <Box display="flex" flexBasis={['100%', '100%', '50%']} maxWidth="580px">
         <motion.div variants={bannerImageVariants}>
           <Image src={BannerImg} alt="banner" borderRadius="lg" />
         </motion.div>
       </Box>
-      <Box display="flex" flexBasis={['100%', '100%', '50%']} padding="10">
+      <Box
+        display="flex"
+        flexBasis={['100%', '100%', '50%']}
+        maxWidth="580px"
+        padding="10"
+      >
         <motion.div variants={bannerTextVariants}>hello 各位</motion.div>
       </Box>
     </Wrapper>
