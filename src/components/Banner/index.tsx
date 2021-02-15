@@ -1,8 +1,8 @@
 import { FC } from 'react';
 import styled from '@emotion/styled';
-import { Flex, Image, Box } from '@chakra-ui/react';
+import { Image, Box } from '@chakra-ui/react';
 import { motion, Variants } from 'framer-motion';
-import BannerImg from '@src/assets/images/banner/banner.jpg';
+import { MDProvider } from '@src/components';
 
 const Wrapper = styled(motion.div)`
   display: flex;
@@ -40,7 +40,13 @@ const bannerTextVariants: Variants = {
   },
 };
 
-const Banner: FC = () => {
+type Props = {
+  imgSrc: string;
+  imgAlt: string;
+  mdSrc: string;
+};
+
+const Banner: FC<Props> = ({ imgSrc, imgAlt, mdSrc }) => {
   return (
     <Wrapper
       initial="hidden"
@@ -50,16 +56,19 @@ const Banner: FC = () => {
     >
       <Box display="flex" flexBasis={['100%', '100%', '50%']} maxWidth="580px">
         <motion.div variants={bannerImageVariants}>
-          <Image src={BannerImg} alt="banner" borderRadius="lg" />
+          <Image src={imgSrc} alt={imgAlt} borderRadius="lg" />
         </motion.div>
       </Box>
       <Box
         display="flex"
+        alignItems="center"
         flexBasis={['100%', '100%', '50%']}
         maxWidth="580px"
         padding="10"
       >
-        <motion.div variants={bannerTextVariants}>hello 各位</motion.div>
+        <motion.div variants={bannerTextVariants}>
+          <MDProvider src={mdSrc} />
+        </motion.div>
       </Box>
     </Wrapper>
   );
