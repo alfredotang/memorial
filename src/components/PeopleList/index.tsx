@@ -1,20 +1,26 @@
 import { FC } from 'react';
-import { Card } from '@src/components';
+import { People } from '@src/components';
 import { SimpleGrid, Box } from '@chakra-ui/react';
-import { peopleListData } from '@src/data/people';
+
+export interface PeopleItem {
+  src: string;
+  alt: string;
+  path?: string;
+  isActive: boolean;
+}
 
 type Props = {
-  activeItem?: string;
   enableActiveMode?: boolean;
   duration?: number;
   delay?: number;
+  data: PeopleItem[];
 };
 
-const CardList: FC<Props> = ({
+const PeopleList: FC<Props> = ({
   duration,
   delay,
-  activeItem,
   enableActiveMode = false,
+  data,
 }) => {
   return (
     <Box display="flex" justifyContent="center">
@@ -24,13 +30,13 @@ const CardList: FC<Props> = ({
         flexWrap="wrap"
         justifyContent="flex-start"
       >
-        {peopleListData.map((item) => (
-          <Card
+        {data.map((item) => (
+          <People
             key={item.alt}
             src={item.src}
             alt={item.alt}
-            redirectTo={`/proposeDay/thanksList/${item.name}/`}
-            isActive={activeItem ? item.name === activeItem : true}
+            redirectTo={item.path}
+            isActive={item.isActive}
             enableActiveMode={enableActiveMode}
             duration={duration}
             delay={delay}
@@ -41,4 +47,4 @@ const CardList: FC<Props> = ({
   );
 };
 
-export default CardList;
+export default PeopleList;

@@ -3,7 +3,6 @@ import { useHistory } from 'react-router-dom';
 import styled from '@emotion/styled';
 import { Avatar, ThemeTypings } from '@chakra-ui/react';
 import { motion, Variants } from 'framer-motion';
-import { PeopleListEntity } from '@src/data/people';
 import { useRWD } from '@src/hooks';
 
 const cardVariants: Variants = {
@@ -29,7 +28,9 @@ const Wrapper = styled(motion.div)<WrapperProps>`
   }
 `;
 
-type Props = Omit<PeopleListEntity, 'name'> & {
+type Props = {
+  src: string;
+  alt: string;
   isActive?: boolean;
   redirectTo?: string;
   duration?: number;
@@ -37,7 +38,7 @@ type Props = Omit<PeopleListEntity, 'name'> & {
   enableActiveMode?: boolean;
 };
 
-const Card: FC<Props> = ({
+const People: FC<Props> = ({
   src,
   alt,
   redirectTo,
@@ -75,4 +76,4 @@ const Card: FC<Props> = ({
   );
 };
 
-export default Card;
+export default People;

@@ -1,15 +1,27 @@
 import { FC } from 'react';
 import { SimpleGrid, Box, PositionProps } from '@chakra-ui/react';
-import { Banner, CardList } from '@src/components';
+import { Banner, PeopleList, PeopleItem } from '@src/components';
 import BannerImg from '@src/assets/images/banner/proposeDay.jpg';
 import ProposeDayMd from './proposeDay.md';
 import { useMeasure, useRWD } from '@src/hooks';
+import { peopleListData } from './data';
 
 type BottomVariants = PositionProps['bottom'];
 
 const ProposeDay: FC = () => {
   const { ref, bounds } = useMeasure();
   const bottom = useRWD<BottomVariants>(['15px', '15px', '30px']);
+
+  const data: PeopleItem[] = peopleListData.map((item) => {
+    return {
+      name: item.name,
+      src: item.src,
+      alt: item.alt,
+      path: `/proposeData/thanksList/${item.name}/`,
+      isActive: false,
+    };
+  });
+
   return (
     <SimpleGrid
       column={2}
@@ -20,7 +32,7 @@ const ProposeDay: FC = () => {
       <Banner imgSrc={BannerImg} imgAlt="proposeDay" mdSrc={ProposeDayMd} />
       <Box height={`${bounds.height}px`} display="flex" justifyContent="center">
         <Box position="fixed" ref={ref} bottom={bottom}>
-          <CardList delay={1} duration={1} />
+          <PeopleList delay={1} duration={1} data={data} />
         </Box>
       </Box>
     </SimpleGrid>
