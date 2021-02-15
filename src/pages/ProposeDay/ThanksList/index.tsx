@@ -18,7 +18,7 @@ const ThanksList: FC = () => {
       name: item.name,
       src: item.src,
       alt: item.alt,
-      path: `/proposeData/thanksList/${item.name}/`,
+      path: `/proposeDay/thanksList/${item.name}/`,
       isActive: item.name === name,
     };
   });
