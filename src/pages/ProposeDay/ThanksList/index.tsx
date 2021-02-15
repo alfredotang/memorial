@@ -1,9 +1,9 @@
 import { FC, Fragment } from 'react';
 import { useParams } from 'react-router-dom';
 import { Box } from '@chakra-ui/react';
-import { peopleListData } from '../data';
-import { PeopleList, PeopleItem } from '@src/components';
+import { PeopleList, PeopleItem, MDProvider } from '@src/components';
 import { useMeasure } from '@src/hooks';
+import { peopleListData } from '../contents/data';
 
 function findPeople(name: string) {
   return peopleListData.find((item) => item.name === name);
@@ -34,6 +34,9 @@ const ThanksList: FC = () => {
         <Box position="fixed" ref={ref}>
           <PeopleList duration={1} enableActiveMode data={data} />
         </Box>
+      </Box>
+      <Box display="flex" justifyContent="center" p={[10, 10, 20]}>
+        {people?.md && <MDProvider src={people?.md} />}
       </Box>
     </Box>
   );

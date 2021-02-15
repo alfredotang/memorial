@@ -2,9 +2,9 @@ import { FC } from 'react';
 import { SimpleGrid, Box, PositionProps } from '@chakra-ui/react';
 import { PhotoAlbum, PeopleList, PeopleItem } from '@src/components';
 import BannerImg from '@src/assets/images/banner/proposeDay.jpg';
-import ProposeDayMd from './proposeDay.md';
+import ProposeDayMd from './contents/md/proposeDay.md';
 import { useMeasure, useRWD } from '@src/hooks';
-import { peopleListData } from './data';
+import { peopleListData } from './contents/data';
 
 type BottomVariants = PositionProps['bottom'];
 
