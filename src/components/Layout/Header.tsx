@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { useHistory, useLocation } from 'react-router-dom';
+import { useHistory, useLocation, NavLink } from 'react-router-dom';
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 import { Heading, Box, Button, ThemeTypings } from '@chakra-ui/react';
@@ -42,6 +42,10 @@ const Header: FC = () => {
     history.replace('/');
   };
 
+  const handleHistoryBack = () => {
+    history.goBack();
+  };
+
   return (
     <Wrapper>
       <HeaderContent showShadow={SHOW_HEADER_SHADOW}>
@@ -56,8 +60,8 @@ const Header: FC = () => {
         </Box>
         {pathname !== '/' && (
           <Box display="flex" mr={[5, 10, 20]}>
-            <Button variant="link" onClick={handleRedirectToHome}>
-              Back To Home
+            <Button variant="link" onClick={handleHistoryBack}>
+              Back
             </Button>
           </Box>
         )}
