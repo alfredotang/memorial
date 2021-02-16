@@ -1,0 +1,37 @@
+{
+  "files": {
+    "main.js": "/memorial/static/js/main.e7b1f133.chunk.js",
+    "main.js.map": "/memorial/static/js/main.e7b1f133.chunk.js.map",
+    "runtime-main.js": "/memorial/static/js/runtime-main.14e6d1fb.js",
+    "runtime-main.js.map": "/memorial/static/js/runtime-main.14e6d1fb.js.map",
+    "static/js/2.70dabf5d.chunk.js": "/memorial/static/js/2.70dabf5d.chunk.js",
+    "static/js/2.70dabf5d.chunk.js.map": "/memorial/static/js/2.70dabf5d.chunk.js.map",
+    "static/js/3.391e296b.chunk.js": "/memorial/static/js/3.391e296b.chunk.js",
+    "static/js/3.391e296b.chunk.js.map": "/memorial/static/js/3.391e296b.chunk.js.map",
+    "static/js/4.57d29554.chunk.js": "/memorial/static/js/4.57d29554.chunk.js",
+    "static/js/4.57d29554.chunk.js.map": "/memorial/static/js/4.57d29554.chunk.js.map",
+    "static/js/5.0181c2f1.chunk.js": "/memorial/static/js/5.0181c2f1.chunk.js",
+    "static/js/5.0181c2f1.chunk.js.map": "/memorial/static/js/5.0181c2f1.chunk.js.map",
+    "static/js/6.65ecc113.chunk.js": "/memorial/static/js/6.65ecc113.chunk.js",
+    "static/js/6.65ecc113.chunk.js.map": "/memorial/static/js/6.65ecc113.chunk.js.map",
+    "index.html": "/memorial/index.html",
+    "static/js/2.70dabf5d.chunk.js.LICENSE.txt": "/memorial/static/js/2.70dabf5d.chunk.js.LICENSE.txt",
+    "static/media/esther-cheng.32a80eac.jpg": "/memorial/static/media/esther-cheng.32a80eac.jpg",
+    "static/media/estherCheng.7eaa9b5c.md": "/memorial/static/media/estherCheng.7eaa9b5c.md",
+    "static/media/joyce-wei.bc988c71.jpg": "/memorial/static/media/joyce-wei.bc988c71.jpg",
+    "static/media/joyceWei.424c43c9.md": "/memorial/static/media/joyceWei.424c43c9.md",
+    "static/media/marry.fd5b8c0b.jpg": "/memorial/static/media/marry.fd5b8c0b.jpg",
+    "static/media/marryFu.7a7b2ea2.md": "/memorial/static/media/marryFu.7a7b2ea2.md",
+    "static/media/proposeDay.02317309.jpg": "/memorial/static/media/proposeDay.02317309.jpg",
+    "static/media/proposeDay.be79a051.md": "/memorial/static/media/proposeDay.be79a051.md",
+    "static/media/sihYin.8157a1b7.md": "/memorial/static/media/sihYin.8157a1b7.md",
+    "static/media/sihyin-chen.f32cc8a1.jpg": "/memorial/static/media/sihyin-chen.f32cc8a1.jpg",
+    "static/media/yu-hua.8f875795.jpg": "/memorial/static/media/yu-hua.8f875795.jpg",
+    "static/media/yuHua.acea9ac3.md": "/memorial/static/media/yuHua.acea9ac3.md"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.14e6d1fb.js",
+    "static/js/2.70dabf5d.chunk.js",
+    "static/js/main.e7b1f133.chunk.js"
+  ]
+}
