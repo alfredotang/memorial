@@ -21,6 +21,7 @@ type WrapperProps = {
 type AvatarSizeVariants = ThemeTypings['components']['Avatar']['sizes'];
 
 const Wrapper = styled(motion.div)<WrapperProps>`
+  background-color: transparent;
   ${({ isActive, enableActiveMode }) =>
     enableActiveMode && !isActive && `filter: blur(2px);`}
   &:hover {
@@ -69,6 +70,7 @@ const People: FC<Props> = ({
         whileHover={{ scale: 1.5 }}
         whileTap={{ scale: 1.2 }}
         onClick={handleRedirectToPeople}
+        style={{ backgroundColor: 'rgba(0,0,0,0)' }}
       >
         <Avatar src={src} name={alt} size={avatarSize} cursor="pointer" />
       </motion.div>

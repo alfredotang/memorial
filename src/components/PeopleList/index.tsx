@@ -23,12 +23,13 @@ const PeopleList: FC<Props> = ({
   data,
 }) => {
   return (
-    <Box display="flex" justifyContent="center">
+    <Box display="flex" justifyContent="center" bg="transparent">
       <SimpleGrid
         spacing={[5, 5, 10]}
         display="flex"
         flexWrap="wrap"
         justifyContent="flex-start"
+        bg="transparent"
       >
         {data.map((item) => (
           <People

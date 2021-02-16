@@ -1,5 +1,13 @@
 import { FC } from 'react';
-import { Code, Heading, Box, TypographyProps, Alert } from '@chakra-ui/react';
+import {
+  Code,
+  Heading,
+  Box,
+  TypographyProps,
+  Alert,
+  Divider,
+} from '@chakra-ui/react';
+import styled from '@emotion/styled';
 import Markdown, { MarkdownToJSX } from 'markdown-to-jsx';
 import { useMarkdownQuery, useRWD } from '@src/hooks';
 
@@ -35,22 +43,47 @@ const H4: FC = ({ children }) => {
   );
 };
 
+const Hr: FC = ({ children }) => {
+  return (
+    <Divider bg="paper" color="text">
+      {children}
+    </Divider>
+  );
+};
+
 type FontSizeVariants = TypographyProps['fontSize'];
 
 const Paragraph: FC = ({ children }) => {
   const fontsize = useRWD<FontSizeVariants>(['md', 'xl', '2xl']);
-  return <Box fontSize={fontsize}>{children}</Box>;
+  return (
+    <Box fontSize={fontsize} bg="paper" borderRadius="lg">
+      {children}
+    </Box>
+  );
 };
 
 const InlineCode: FC = ({ children }) => {
   const fontsize = useRWD<FontSizeVariants>(['md', 'xl', '2xl']);
-  return <Code fontSize={fontsize}>{children}</Code>;
+  return (
+    <Code fontSize={fontsize} colorScheme="primary">
+      {children}
+    </Code>
+  );
 };
 
 const Info: FC = ({ children }) => {
   const fontsize = useRWD<FontSizeVariants>(['md', 'xl', '2xl']);
   return <Alert fontSize={fontsize}>{children}</Alert>;
 };
+
+const Wrapper = styled.div`
+  background-color: ${(props) => props.theme.colors.paper};
+  em,
+  del,
+  div {
+    background-color: inherit;
+  }
+`;
 
 type Props = {
   src: string;
@@ -66,8 +99,13 @@ const MDProvider: FC<Props> = ({ src }) => {
     h4: H4,
     p: Paragraph,
     pre: Info,
+    hr: Hr,
   };
-  return <Markdown options={{ overrides }}>{postMarkdown}</Markdown>;
+  return (
+    <Wrapper>
+      <Markdown options={{ overrides }}>{postMarkdown}</Markdown>
+    </Wrapper>
+  );
 };
 
 export default MDProvider;

@@ -18,7 +18,6 @@ const Wrapper = styled.header`
   ${HeaderBaseStyled}
 `;
 
-// TODO: add background-color by theme
 const HeaderContent = styled.div<{ showShadow: boolean }>`
   ${HeaderBaseStyled}
   position: fixed;
@@ -26,6 +25,7 @@ const HeaderContent = styled.div<{ showShadow: boolean }>`
   align-items: center;
   justify-content: space-between;
   display: flex;
+  background-color: ${(props) => props.theme.colors.background};
   box-shadow: ${({ showShadow, theme }) =>
     showShadow ? theme.shadows['md'] : 'none'};
 `;
@@ -59,13 +59,18 @@ const Header: FC = () => {
             cursor="pointer"
             onClick={handleRedirectToHome}
             size={headingSize}
+            colorScheme="primary"
           >
             Memorial
           </Heading>
         </Box>
         {pathname !== '/' && (
           <Box display="flex" mr={[5, 10, 20]}>
-            <Button variant="link" onClick={handleHistoryBack}>
+            <Button
+              variant="link"
+              onClick={handleHistoryBack}
+              colorScheme="primary"
+            >
               Back
             </Button>
           </Box>

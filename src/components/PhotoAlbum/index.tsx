@@ -1,13 +1,38 @@
 import { FC } from 'react';
 import styled from '@emotion/styled';
+import { css } from '@emotion/react';
 import { Image, Box } from '@chakra-ui/react';
 import { motion, Variants } from 'framer-motion';
 import { MDProvider } from '@src/components';
+import { theme } from '@src/theme';
 
 const Wrapper = styled(motion.div)`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+`;
+
+const BlockBaseStyled = css`
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 580px;
+  flex-basis: 100%;
+
+  ${theme.breakpoints.lg} {
+    flex-basis: 50%;
+  }
+`;
+
+const ImgBlock = styled(motion.div)`
+  ${BlockBaseStyled}
+`;
+
+const TextBlock = styled(motion.div)`
+  ${BlockBaseStyled}
+  align-items: center;
+  background-color: ${(props) => props.theme.colors.paper};
+  padding: ${(props) => props.theme.space[10]};
+  border-radius: ${(props) => props.theme.radii['lg']};
 `;
 
 const wrapperVariants: Variants = {
@@ -22,7 +47,7 @@ const wrapperVariants: Variants = {
   },
 };
 
-const bannerImageVariants: Variants = {
+const imageVariants: Variants = {
   hidden: { y: -20, opacity: 0 },
   visible: {
     y: 0,
@@ -31,7 +56,7 @@ const bannerImageVariants: Variants = {
   },
 };
 
-const bannerTextVariants: Variants = {
+const textVariants: Variants = {
   hidden: { x: -20, opacity: 0 },
   visible: {
     x: 0,
@@ -54,22 +79,12 @@ const PhotoAlbum: FC<Props> = ({ imgSrc, imgAlt, mdSrc }) => {
       variants={wrapperVariants}
       transition={{ duration: 2 }}
     >
-      <Box display="flex" flexBasis={['100%', '100%', '50%']} maxWidth="580px">
-        <motion.div variants={bannerImageVariants}>
-          <Image src={imgSrc} alt={imgAlt} borderRadius="lg" />
-        </motion.div>
-      </Box>
-      <Box
-        display="flex"
-        alignItems="center"
-        flexBasis={['100%', '100%', '50%']}
-        maxWidth="580px"
-        padding="10"
-      >
-        <motion.div variants={bannerTextVariants}>
-          <MDProvider src={mdSrc} />
-        </motion.div>
-      </Box>
+      <ImgBlock variants={imageVariants}>
+        <Image src={imgSrc} alt={imgAlt} borderRadius="lg" />
+      </ImgBlock>
+      <TextBlock variants={textVariants}>
+        <MDProvider src={mdSrc} />
+      </TextBlock>
     </Wrapper>
   );
 };
