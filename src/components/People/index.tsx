@@ -51,7 +51,7 @@ const People: FC<Props> = ({
   const history = useHistory();
   const handleRedirectToPeople = () => {
     if (redirectTo) {
-      history.push(redirectTo);
+      history.replace(redirectTo);
     }
   };
 
