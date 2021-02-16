@@ -18,6 +18,7 @@ const Wrapper = styled.header`
   ${HeaderBaseStyled}
 `;
 
+// TODO: z-index 改用 theme
 const HeaderContent = styled.div<{ showShadow: boolean }>`
   ${HeaderBaseStyled}
   position: fixed;
@@ -28,6 +29,7 @@ const HeaderContent = styled.div<{ showShadow: boolean }>`
   background-color: ${(props) => props.theme.colors.background};
   box-shadow: ${({ showShadow, theme }) =>
     showShadow ? theme.shadows['md'] : 'none'};
+  z-index: 1200;
 `;
 
 const Header: FC = () => {
@@ -43,12 +45,15 @@ const Header: FC = () => {
   };
 
   const handleHistoryBack = () => {
-    const pathMatch = pathname.split('/');
-    if (pathMatch.length > 2) {
-      history.replace(`/${pathMatch[1]}`);
-    } else {
-      handleRedirectToHome();
-    }
+    // 解決 client router
+    //TODO: 待 home page 開發完成
+    // const pathMatch = pathname.split('/');
+    // if (pathMatch.length > 2) {
+    //   history.replace(`/${pathMatch[1]}`);
+    // } else {
+    //   handleRedirectToHome();
+    // }
+    handleRedirectToHome();
   };
 
   return (

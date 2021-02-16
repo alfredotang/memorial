@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { People } from '@src/components';
-import { SimpleGrid, Box } from '@chakra-ui/react';
+import { Box } from '@chakra-ui/react';
 
 export interface PeopleItem {
   src: string;
@@ -24,16 +24,16 @@ const PeopleList: FC<Props> = ({
 }) => {
   return (
     <Box display="flex" justifyContent="center" bg="transparent">
-      <SimpleGrid
-        spacing={[5, 5, 10]}
-        display="flex"
-        flexWrap="wrap"
-        justifyContent="flex-start"
-        bg="transparent"
-      >
-        {data.map((item) => (
+      {data.map((item) => (
+        <Box
+          p={[2, 3, 5]}
+          display="flex"
+          flexWrap="wrap"
+          justifyContent="flex-start"
+          bg="transparent"
+          key={item.alt}
+        >
           <People
-            key={item.alt}
             src={item.src}
             alt={item.alt}
             redirectTo={item.path}
@@ -42,8 +42,8 @@ const PeopleList: FC<Props> = ({
             duration={duration}
             delay={delay}
           />
-        ))}
-      </SimpleGrid>
+        </Box>
+      ))}
     </Box>
   );
 };

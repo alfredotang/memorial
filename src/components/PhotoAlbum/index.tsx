@@ -1,7 +1,6 @@
 import { FC } from 'react';
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
-import { Image, Box } from '@chakra-ui/react';
 import { motion, Variants } from 'framer-motion';
 import { MDProvider } from '@src/components';
 import { theme } from '@src/theme';
@@ -17,14 +16,25 @@ const BlockBaseStyled = css`
   flex-wrap: wrap;
   max-width: 580px;
   flex-basis: 100%;
+`;
 
-  ${theme.breakpoints.lg} {
-    flex-basis: 50%;
+// TODO: use theme media query
+const ImgBlock = styled(motion.div)`
+  ${BlockBaseStyled}
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 72%;
+
+  @media screen and (min-width: 960px) {
+    padding-bottom: 36%;
   }
 `;
 
-const ImgBlock = styled(motion.div)`
-  ${BlockBaseStyled}
+const Image = styled.img`
+  border-radius: ${(props) => props.theme.radii['lg']};
+  position: absolute;
+  height: 100%;
+  width: 100%;
 `;
 
 const TextBlock = styled(motion.div)`
@@ -80,7 +90,7 @@ const PhotoAlbum: FC<Props> = ({ imgSrc, imgAlt, mdSrc }) => {
       transition={{ duration: 2 }}
     >
       <ImgBlock variants={imageVariants}>
-        <Image src={imgSrc} alt={imgAlt} borderRadius="lg" />
+        <Image src={imgSrc} alt={imgAlt} />
       </ImgBlock>
       <TextBlock variants={textVariants}>
         <MDProvider src={mdSrc} />
