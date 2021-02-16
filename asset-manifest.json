@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.js": "/memorial/static/js/main.e7b1f133.chunk.js",
-    "main.js.map": "/memorial/static/js/main.e7b1f133.chunk.js.map",
-    "runtime-main.js": "/memorial/static/js/runtime-main.14e6d1fb.js",
-    "runtime-main.js.map": "/memorial/static/js/runtime-main.14e6d1fb.js.map",
-    "static/js/2.70dabf5d.chunk.js": "/memorial/static/js/2.70dabf5d.chunk.js",
-    "static/js/2.70dabf5d.chunk.js.map": "/memorial/static/js/2.70dabf5d.chunk.js.map",
-    "static/js/3.391e296b.chunk.js": "/memorial/static/js/3.391e296b.chunk.js",
-    "static/js/3.391e296b.chunk.js.map": "/memorial/static/js/3.391e296b.chunk.js.map",
+    "main.js": "/memorial/static/js/main.975436e3.chunk.js",
+    "main.js.map": "/memorial/static/js/main.975436e3.chunk.js.map",
+    "runtime-main.js": "/memorial/static/js/runtime-main.5f6b3f34.js",
+    "runtime-main.js.map": "/memorial/static/js/runtime-main.5f6b3f34.js.map",
+    "static/js/2.2f6d87ee.chunk.js": "/memorial/static/js/2.2f6d87ee.chunk.js",
+    "static/js/2.2f6d87ee.chunk.js.map": "/memorial/static/js/2.2f6d87ee.chunk.js.map",
+    "static/js/3.9b5ee777.chunk.js": "/memorial/static/js/3.9b5ee777.chunk.js",
+    "static/js/3.9b5ee777.chunk.js.map": "/memorial/static/js/3.9b5ee777.chunk.js.map",
     "static/js/4.57d29554.chunk.js": "/memorial/static/js/4.57d29554.chunk.js",
     "static/js/4.57d29554.chunk.js.map": "/memorial/static/js/4.57d29554.chunk.js.map",
     "static/js/5.0181c2f1.chunk.js": "/memorial/static/js/5.0181c2f1.chunk.js",
@@ -15,7 +15,7 @@
     "static/js/6.65ecc113.chunk.js": "/memorial/static/js/6.65ecc113.chunk.js",
     "static/js/6.65ecc113.chunk.js.map": "/memorial/static/js/6.65ecc113.chunk.js.map",
     "index.html": "/memorial/index.html",
-    "static/js/2.70dabf5d.chunk.js.LICENSE.txt": "/memorial/static/js/2.70dabf5d.chunk.js.LICENSE.txt",
+    "static/js/2.2f6d87ee.chunk.js.LICENSE.txt": "/memorial/static/js/2.2f6d87ee.chunk.js.LICENSE.txt",
     "static/media/esther-cheng.32a80eac.jpg": "/memorial/static/media/esther-cheng.32a80eac.jpg",
     "static/media/estherCheng.7eaa9b5c.md": "/memorial/static/media/estherCheng.7eaa9b5c.md",
     "static/media/joyce-wei.bc988c71.jpg": "/memorial/static/media/joyce-wei.bc988c71.jpg",
@@ -30,8 +30,8 @@
     "static/media/yuHua.acea9ac3.md": "/memorial/static/media/yuHua.acea9ac3.md"
   },
   "entrypoints": [
-    "static/js/runtime-main.14e6d1fb.js",
-    "static/js/2.70dabf5d.chunk.js",
-    "static/js/main.e7b1f133.chunk.js"
+    "static/js/runtime-main.5f6b3f34.js",
+    "static/js/2.2f6d87ee.chunk.js",
+    "static/js/main.975436e3.chunk.js"
   ]
 }
