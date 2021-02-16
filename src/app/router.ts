@@ -12,8 +12,10 @@ interface Routes {
 }
 
 const routes: Routes[] = [
+  // 解決 client router
+  //TODO: 待 home page 開發完成
   {
-    component: Home,
+    component: ProposeDay,
     path: '/',
     exact: true,
     name: 'home',
