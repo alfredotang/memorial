@@ -8,7 +8,7 @@ import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Router>
+    <Router basename="memorial">
       <ColorModeScript initialColorMode={theme.config.initialColorMode} />
       <ThemeProvider>
         <App />
