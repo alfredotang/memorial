@@ -31,7 +31,14 @@ const ProposeDay: FC = () => {
     >
       <PhotoAlbum imgSrc={BannerImg} imgAlt="proposeDay" mdSrc={ProposeDayMd} />
       <Box height={`${bounds.height}px`} display="flex" justifyContent="center">
-        <Box position="fixed" ref={ref} bottom={bottom}>
+        <Box
+          position="fixed"
+          ref={ref}
+          bottom={0}
+          width="100%"
+          py={5}
+          bg="transparent"
+        >
           <PeopleList delay={1} duration={1} data={data} />
         </Box>
       </Box>

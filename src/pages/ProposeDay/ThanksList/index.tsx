@@ -24,21 +24,27 @@ const ThanksList: FC = () => {
   });
 
   return (
-    <Box>
+    <Fragment>
       <Box
         mb={[5, 5, 10]}
         height={`${bounds.height}px`}
         display="flex"
         justifyContent="center"
       >
-        <Box position="fixed" ref={ref}>
+        <Box position="fixed" ref={ref} bg="transparent">
           <PeopleList duration={1} enableActiveMode data={data} />
         </Box>
       </Box>
-      <Box display="flex" justifyContent="center" p={[10, 10, 20]}>
+      <Box
+        display="flex"
+        justifyContent="center"
+        p={[10, 10, 20]}
+        background="paper"
+        borderRadius="lg"
+      >
         {people?.md && <MDProvider src={people?.md} />}
       </Box>
-    </Box>
+    </Fragment>
   );
 };
 
