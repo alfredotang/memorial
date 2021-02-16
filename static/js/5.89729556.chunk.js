@@ -1,0 +1,2 @@
+(this.webpackJsonpmemorial=this.webpackJsonpmemorial||[]).push([[5],{121:function(e,t,s){"use strict";s.r(t);var r=s(0),c=s(10),i=s(2);t.default=function(){return Object(i.jsxs)(r.Fragment,{children:[Object(i.jsx)(c.a,{to:"/proposeDay"}),Object(i.jsx)("div",{children:"Home"})]})}}}]);
+//# sourceMappingURL=5.89729556.chunk.js.map
