@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { HashRouter as Router } from 'react-router-dom';
 import { ColorModeScript } from '@chakra-ui/react';
 import { theme, ThemeProvider } from '@src/theme';
 import App from '@src/app';
@@ -8,7 +8,7 @@ import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Router basename="memorial">
+    <Router basename={process.env.PUBLIC_URL}>
       <ColorModeScript initialColorMode={theme.config.initialColorMode} />
       <ThemeProvider>
         <App />
